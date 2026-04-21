@@ -151,24 +151,25 @@ int main(int argc, char **argv)
 		isAcOn = ((inputRegister >> 4 & 0x00000001) == 0x00000001); //DONE
 
 		// bits 5 to 9 indicate desired temperature
-		unsigned int temperatureDesired_tmp = inputRegister >> 5; // Assignment
+		unsigned int temperatureDesired_tmp = inputRegister >> 5; //DONE
 		temperatureDesired_tmp &= 0x0000001F; // Assignment
 		//printf("temperatureDesired_tmp casted to float=%f\n",(float)temperatureDesired_tmp); //for debug
 		// According to equation 1:
-		temperatureDesired = 14.5 + ((float)temperatureDesired_tmp * 0.5); // Assignment
+		temperatureDesired = 14.5 + ((float)temperatureDesired_tmp * 0.5); // DONE
 
 		// Temperature sensor : XXXX XXXX XXXX XXII IIII IIXX XXXX XXXX , assuming that "I" is an input bit (temperature sensor) and "X" is a don't-care bit.
 		// bits 10 to 17 indicate temperature value read from sensor
 		// bits 10 to 12 are fractional part
-		unsigned int temperatureMeasured_fractional = 0; // Assignment
-		temperatureMeasured_fractional = 0x00000000; // Assignment
+		unsigned int temperatureMeasured_fractional = inputRegister >> 10 ; // Assignment
+		temperatureMeasured_fractional &= 0x00000007; // Assignment
 		// bits 13 to 17 are decimal part
-		unsigned int temperatureMeasured_decimal = inputRegister ; // Assignment
-		temperatureMeasured_decimal = 0x00000000; // Assignment
+		unsigned int temperatureMeasured_decimal = inputRegister >> 13; // Assignment
+		temperatureMeasured_decimal &= 0x0000001F; // Assignment
 		// According to equation 2:
+
 			// Assignment
 			// Assignment
-		temperatureMeasured = 0; // Assignment
+		temperatureMeasured = (float)temperatureMeasured_decimal * 1.0 + (float)temperatureMeasured_fractional * 0.2; // Assignment
 			// Assignment
 			// Assignment
 		
