@@ -148,14 +148,14 @@ int main(int argc, char **argv)
 		// AC Selector : XXXX XXXX XXXX XXXX XXXX XXII IIII XXXX , assuming that "I" is an input bit (for AC) and "X" is a don't-care bit.
 		// bit number 4 is AC on/off switch
 
-		isAcOn = ((inputRegister >> 4 & 0x00000001) == 0x00000001);
+		isAcOn = ((inputRegister >> 4 & 0x00000001) == 0x00000001); //DONE
 
 		// bits 5 to 9 indicate desired temperature
-		unsigned int temperatureDesired_tmp = 0; // Assignment
-		temperatureDesired_tmp = 0x00000000; // Assignment
+		unsigned int temperatureDesired_tmp = inputRegister >> 5; // Assignment
+		temperatureDesired_tmp &= 0x0000001F; // Assignment
 		//printf("temperatureDesired_tmp casted to float=%f\n",(float)temperatureDesired_tmp); //for debug
 		// According to equation 1:
-		temperatureDesired = 0.0 ; // Assignment
+		temperatureDesired = 14.5 + ((float)temperatureDesired_tmp * 0.5); // Assignment
 
 		// Temperature sensor : XXXX XXXX XXXX XXII IIII IIXX XXXX XXXX , assuming that "I" is an input bit (temperature sensor) and "X" is a don't-care bit.
 		// bits 10 to 17 indicate temperature value read from sensor
