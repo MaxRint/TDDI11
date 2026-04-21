@@ -147,7 +147,9 @@ int main(int argc, char **argv)
 
 		// AC Selector : XXXX XXXX XXXX XXXX XXXX XXII IIII XXXX , assuming that "I" is an input bit (for AC) and "X" is a don't-care bit.
 		// bit number 4 is AC on/off switch
-		isAcOn = false; // Assignment
+
+		isAcOn = ((inputRegister >> 4 & 0x00000001) == 0x00000001);
+
 		// bits 5 to 9 indicate desired temperature
 		unsigned int temperatureDesired_tmp = 0; // Assignment
 		temperatureDesired_tmp = 0x00000000; // Assignment
