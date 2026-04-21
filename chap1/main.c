@@ -216,11 +216,11 @@ int main(int argc, char **argv)
 		// fan control
 		// according tables given in the manual
 		if(fanSpeedSelector == 0x0)
-			fanSpeed = 0x0; // Assignment
-		else if (fanSpeedSelector == 0x0) // Assignment
-			fanSpeed = 0x0; // Assignment
-		else if (fanSpeedSelector == 0x0) // Assignment
-			fanSpeed = 0x0; // Assignment
+			fanSpeed = 0x7; // Assignment
+		else if (fanSpeedSelector == 0x1) // Assignment
+			fanSpeed = 0x3; // Assignment
+		else if (fanSpeedSelector == 0x2) // Assignment
+			fanSpeed = 0x5; // Assignment
 		else
 			fanSpeed = 0x0; // Assignment
 
@@ -232,12 +232,21 @@ int main(int argc, char **argv)
 				isCoolerOn = true;
 				isHeaterOn = false;
 			}
-			// Assignment	
-			// Assignment	
+			
+			if(temperatureMeasured > temperatureDesired + 0.3)
+			{
+				isCoolerOn = true;
+			}
+
+			if (temperatureMeasured < temperatureDesired - 0.3)
+			{
+				isHeaterOn = true;
+			}
+			
 		}			
 		else
 		{
-			// Assignment	
+			isCoolerOn = false; 	
 			isHeaterOn = false;
 		}
 		if (isCoolerOn && (temperatureMeasured <= temperatureDesired))
@@ -245,8 +254,12 @@ int main(int argc, char **argv)
 			isCoolerOn = false;
 			isHeaterOn = false;
 		}
-		// Assignment	
-		// Assignment	
+
+		if (isHeaterOn && (temperatureMeasured >= temperatureDesired))
+		{
+			isCoolerOn = false;
+			isHeaterOn = false;
+		}
 
 		// humidity warning:
 		if(humidityMeasured < Humidity_2Low)
