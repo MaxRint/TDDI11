@@ -4,13 +4,13 @@
 #include <stdbool.h>
 
 // Room Controls, in an infinite loops polls input switches, selectors, and sensors. Then it interprets the row data. Based on acquired information, the system
-// makes decisions. These decisions are then used to set appropriate values for signals and warning lights as well as actuators such as cooler and heater. 
+// makes decisions. These decisions are then used to set appropriate values for signals and warning lights as well as actuators such as cooler and heater.
 
 // In order to extract the row data from the input register and in order to figure out what row data means, please refer to the lab manual chapter 2.
 // In order to figure out how to actuate the lights and AC system and in order to know which bits in the output register control which of the devices, please refer to the lab manual chapter 2.
 
 // In reality, such an embedded application runs in an "infinite" loop. Moreover, the input and output directly communicate with pins on the processing unit's IC.
-// this program, is adapted for simulation purpose, therefore the loop is stopped at the end for user to allow it to proceed. Moreover, the inputs and outputs are 
+// this program, is adapted for simulation purpose, therefore the loop is stopped at the end for user to allow it to proceed. Moreover, the inputs and outputs are
 // connected to files instead of the physical world.
 
 // compile and run:
@@ -19,11 +19,11 @@
 // ./a.out >> displayLog.txt
 
 // some notes:
-// binary to hex conversion: 
-// Group binaries in packs of four 0000 0000 0000 0000 
+// binary to hex conversion:
+// Group binaries in packs of four 0000 0000 0000 0000
 // From 0 to 9 in a pack maps to 0 to 9 in the corresponding hex digit
 // example:
-// binary packs: 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 
+// binary packs: 0000 0001 0010 0011 0100 0101 0110 0111 1000 1001
 // hex digits:   0    1    2    3    4    5    6    7    8    9
 // From 10 to 15 in a pack maps to A, B, C, D, E, and F in the corresponding hex digit
 // example:
@@ -34,7 +34,7 @@ unsigned int readInput(unsigned int sampleIndex)
 {
 	char *line = NULL;
 	size_t len = 0;
-	ssize_t read;	
+	ssize_t read;
 	unsigned int inputCurrent = 0;
 	FILE *inputFile;
 	inputFile = fopen("inputData.txt", "r");
@@ -44,18 +44,18 @@ unsigned int readInput(unsigned int sampleIndex)
 	    printf("Cannot open the file!\n");
 	    return(0x00000001 << 23); // bit 23 is not used by the switches or sensors. So can be used to report an error.
 	}
-	
+
 	for(int currentIndex = 0; ;currentIndex++)
 	{
-		fscanf (inputFile, "%d", &inputCurrent);    
-		 
-		if (feof(inputFile)) 
+		fscanf (inputFile, "%d", &inputCurrent);
+
+		if (feof(inputFile))
 		{
 			fclose(inputFile);
 			printf("Reached end of input file! sampleIndex=%d\n", sampleIndex);
 			return(0x00000001 << 24); // bit 24 is not used by the switches or sensors. So can be used to report an error.
 		}
-		if(sampleIndex == currentIndex)		
+		if(sampleIndex == currentIndex)
 		{
 			printf("inputCurrent=%d\n", inputCurrent);
 			break;
@@ -75,7 +75,7 @@ int writeOutput(unsigned int outputCurrent, unsigned int sampleIndex)
 	    return(9);
 	}
 	if(sampleIndex == 0)
-		fprintf(outputFile, "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");	
+		fprintf(outputFile, "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
 
 	fprintf(outputFile, "%d : Output Register = %d\n", sampleIndex, outputCurrent);
 
@@ -84,17 +84,17 @@ int writeOutput(unsigned int outputCurrent, unsigned int sampleIndex)
 }
 
 int main(int argc, char **argv)
-{	
+{
 	// variables related to input and sensors
 	unsigned int inputRegister = 0;
-	bool isLocked = false;	
+	bool isLocked = false;
 	unsigned int fanSpeedSelector = 0;
 	bool isAcOn = false;
 	float temperatureDesired = 0;
 	float temperatureMeasured = 0;
 	unsigned int humiditySensor = 0;
 	unsigned int humidityMeasured = 0;
-	
+
 	// variables related to decisions
 	bool isGreenOn = false;
 	bool isRedOn = false;
@@ -129,14 +129,14 @@ int main(int argc, char **argv)
 		// the mask is: 00...00 00001 in binary, which is a decimal 1. The hex equivalent is 0x00000001.
 		// we use bitwise "and" operation to filter out all irrelevant bits in the "inputRegister". What remains is the isLocked value which must be converted to a boolean
 		// comparison operations always return a boolean. (x == 1) returns "true" if x is one, otherwise it returns "false". The return value is assigned to "isLocked".
-		isLocked = ((inputRegister & 0x00000001) == 0x00000001);		
+		isLocked = ((inputRegister & 0x00000001) == 0x00000001);
 
 		// Fan Speed Selector : XXXX XXXX XXXX XXXX XXXX XXXX XXXX IIIX , assuming that "I" is an input bit (for Fan) and "X" is a don't-care bit.
 		// to extract fan speed selector value, we use a mask that is all 0 but at bits 1 to 3.
 		// the mask is: 00...00 0000 0000 0000 1110 in binary. The hex equivalent is 0x0000000E.
 		// we use bitwise "and" operation to filter out all irrelevant bits in the "inputRegister". Then we shift the remaining bits to end up with sensor data.
 		// What remains is the speed selector value which must be interpreted according the table given in the lab manual.
-		
+
 		//fanSpeedSelector = (inputRegister & 0x0000000E) >> 1;
 
 		// A better alternative is to fist shift the fan selector bits to LSB (Least Significant Bit) position and then filter unwanted remaining bits.
@@ -172,15 +172,15 @@ int main(int argc, char **argv)
 		temperatureMeasured = (float)temperatureMeasured_decimal * 1.0 + (float)temperatureMeasured_fractional * 0.2; // Assignment
 			// Assignment
 			// Assignment
-		
+
 		// Humidity sensor : XXXX XXXX XIII IIXX XXXX XXXX XXXX XXXX , assuming that "I" is an input bit (humidity sensor) and "X" is a don't-care bit.
 		// to extract humidity value, we use a mask that is all 0 but at bits 18 to 22.
 		// the mask is: 00...0 0111 1100 0000 0000 0000 0000 in binary. The hex equivalent is 0x007C0000.
 		// we use bitwise "and" operation to filter out all irrelevant bits in the "inputRegister". Then we shift the remaining bits to end up with sensor data.
-		// What remains is the humidity sensor data value which must be converted to humidity percentage.		
-		
+		// What remains is the humidity sensor data value which must be converted to humidity percentage.
+
 		//humiditySensor = (inputRegister & 0x007C0000) >> 18;
-		
+
 		// A better alternative is to fist shift the sensor data to LSB (Least Significant Bit) position and then filter unwanted remaining bits.
 		// sensor data is XX...XX XIII IIXX XXXX XXXX XXXX XXXX in binary, assuming that "I" are sensor data bits and "X" don't-care bits. We shift by 18, ending up as: XX...XX XXXI IIII.
 		// The mask will be: 00...00 0001 1111. The hex equivalent is 0x0000001F.
@@ -189,17 +189,17 @@ int main(int argc, char **argv)
 
 		// Converting sensor data (humiditySensor) to humidityValue percentage using equation 3.
 		// Here we use shift and sum operations to implement multiplication. Some examples:
-		//				(a * 2) = (a << 1)		//				(a * 3) = ((a << 1) + a)	
+		//				(a * 2) = (a << 1)		//				(a * 3) = ((a << 1) + a)
 		//				(a * 4) = (a << 2)
 		if (humiditySensor < 3)
-			humidityMeasured = humiditySensor << 2; 
+			humidityMeasured = humiditySensor << 2;
 		else if (humiditySensor < 28)
 			humidityMeasured = 8 + ((humiditySensor - 2) << 1) + (humiditySensor - 2);
 		else if (humiditySensor < 31)
 			humidityMeasured = 83 + ((humiditySensor - 27) << 2);
 		else
 			humidityMeasured = 100;
-		
+
 		//++++++ Section 2. Decide on outputs.  ++++++//
 		// signal lights for lock
 		if(isLocked)
@@ -212,17 +212,17 @@ int main(int argc, char **argv)
 			isGreenOn = true;
 			isRedOn = false;
 		}
-		
+
 		// fan control
 		// according tables given in the manual
-		if(fanSpeedSelector == 0x0)
-			fanSpeed = 0x7; // Assignment
-		else if (fanSpeedSelector == 0x1) // Assignment
-			fanSpeed = 0x3; // Assignment
-		else if (fanSpeedSelector == 0x2) // Assignment
-			fanSpeed = 0x5; // Assignment
-		else
+		if(fanSpeedSelector == 0x7)
 			fanSpeed = 0x0; // Assignment
+		else if (fanSpeedSelector == 0x3) // Assignment
+			fanSpeed = 0x1; // Assignment
+		else if (fanSpeedSelector == 0x5) // Assignment
+			fanSpeed = 0x2; // Assignment
+		else
+			fanSpeed = 0x3; // Assignment
 
 		// temperature and AC control
 		if (isAcOn)
@@ -232,7 +232,7 @@ int main(int argc, char **argv)
 				isCoolerOn = true;
 				isHeaterOn = false;
 			}
-			
+
 			if(temperatureMeasured > temperatureDesired + 0.3)
 			{
 				isCoolerOn = true;
@@ -242,11 +242,11 @@ int main(int argc, char **argv)
 			{
 				isHeaterOn = true;
 			}
-			
-		}			
+
+		}
 		else
 		{
-			isCoolerOn = false; 	
+			isCoolerOn = false;
 			isHeaterOn = false;
 		}
 		if (isCoolerOn && (temperatureMeasured <= temperatureDesired))
@@ -286,43 +286,50 @@ int main(int argc, char **argv)
 		// "Y" bits are don't-touch meaning that we must not change their values.
 		// If it is off, since outputRegister is already made 0 (all bits 0) we do nothing.
 		// If it is on, since the "on" state corresponds with a "1" according to the lab manual, then we can add 1 to change bit 0 to "1". This will not change the value of other bits.
-		
-		//if(isGreenOn)		
+
+		//if(isGreenOn)
 		//	outputRegister += 0x00000001;
-		
+
 		// Alternatively we can use bitwise OR operator:
-		if(isGreenOn)		
+		if(isGreenOn)
 			outputRegister |= 0x00000001;
 
 		// Red light : YYYY YYYY YYYY YYYY YYYY YYYY YYYY YYOY , assuming that "O" is the output bit (red light) and "Y" is a don't-touch bit.
 		// If it is off, since outputRegister is already made 0 (all bits 0) we do nothing.
 		// If it is on, since the "on" state corresponds with a "1" at bit 1, according to the lab manual, then we shift "1" to bit 1 location and perform a bitwise OR.
-		if(isRedOn)		
+		if(isRedOn)
 			outputRegister |= (0x00000001 << 1);
 
 		// Fan speed at bit 2 to 3 : YYYY YYYY YYYY YYYY YYYY YYYY YYYY OOYY , assuming that "O" is the output bit (fan speed) and "Y" is a don't-touch bit.
 		// The values are defined in the lab manual. These are already converetd from selector readout in "fanSpeedSelector" into the proper format "fanSpeed".
 		// Shift to place and perform a bitwise OR.
-		outputRegister = fanSpeed ; // Assignment	
+		outputRegister |= (fanSpeed << 2); // Assignment
 
 		// Cooler control at bit 4 : YYYY YYYY YYYY YYYY YYYY YYYY YYYO YYYY , assuming that "O" is the output bit (Cooler control) and "Y" is a don't-touch bit.
-		// Assignment	
+		// Assignment
+		if(isCoolerOn)
+		{
+            outputRegister |= (0x00010000 << 4);
+		}
 
 		// Heater control at bit 5 : YYYY YYYY YYYY YYYY YYYY YYYY YYOY YYYY , assuming that "O" is the output bit (Heater control) and "Y" is a don't-touch bit.
-		// Assignment	
-
+		// Assignment
+		if(isHeaterOn)
+		{
+            outputRegister |= (0x00100000 << 5);
+		}
 		// Humidity too high warning at bit 6 : YYYY YYYY YYYY YYYY YYYY YYYY YOYY YYYY , assuming that "O" is the output bit and "Y" is a don't-touch bit.
-		// Pay attention that writing 1 actually turns off the light, as defined in the lab manual. 
+		// Pay attention that writing 1 actually turns off the light, as defined in the lab manual.
 		// Make sure the light is off normally. Here we can not rely on the fact that previously we set outputRegister = 0 since the light is actually "on" when its control bit is "0".
 		// Instead we use the fact that we previously set outputRegister = 0 to light up the warning light (by writing nothing for the case that it is too humid)
-		if(isHumidity2High_n) 
+		if(isHumidity2High_n)
 			outputRegister |= (0x00000001 << 6);
 
 		// Humidity too low warning at bit 7 : YYYY YYYY YYYY YYYY YYYY YYYY OYYY YYYY , assuming that "O" is the output bit and "Y" is a don't-touch bit.
-		// Pay attention that writing 1 actually turns off the light, as defined in the lab manual. 
+		// Pay attention that writing 1 actually turns off the light, as defined in the lab manual.
 		// Make sure the light is off normally. Here we can not rely on the fact that, previously, we set outputRegister = 0 since the light is actually "on" when its control bit is "0".
 		// Instead we use the fact that we previously set outputRegister = 0 to light up the warning light (by writing nothing for the case that humidity is too low)
-		if(isHumidity2Low_n) 
+		if(isHumidity2Low_n)
 			outputRegister |= (0x00000001 << 7);
 
 		writeOutput(outputRegister, sampleIndex);
@@ -333,12 +340,9 @@ int main(int argc, char **argv)
 
 		// This keeps the loop from going fast, allowing us to see the output for debugging purpose. Press "Enter" to proceed.
 		// int dummy = getchar(); //for debug
-		
-		// increment sample index used for simulation		
+
+		// increment sample index used for simulation
 		sampleIndex++;
 	}
 	return 0;
 }
-
-
-
