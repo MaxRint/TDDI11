@@ -47,52 +47,40 @@ RES_OFF	EQU     24	; Offset from EBP to result array pointer
 llmultiply:
 	PUSH EBP
 	MOV EBP, ESP
+	mov ESI, [EBP+RES_OFF]
 
-	PUSH ESI ; 2 << 32
-	PUSH EDI 
-	PUSH EDX
-	PUSH EAX
-
-	mov ESI, 2
-
-	shl ESI, 31
-
-	; a
-	mov EDI, [EBP+AL_OFF]
-	mov EDX, [EBP+AH_OFF]
-
-	imul EDX, ESI
-	add EDX, EDI  ; reg = a
-
-	; reg b
+	; 0-3 bytes
+	mov EAX, [EBP+AL_OFF]
 	mov EDI, [EBP+BL_OFF]
-	mov EAX, [EBP+BH_OFF]
-
-	imul EAX, ESI
-	add EAX, EDI  ; reg = b
-
-
-	imul EAX, EBX
-	mov [ESP], EAX
+	mul EDI
+	mov [ESI], EAX
+	mov [ESI+4], EDX    
 
 
+	;4-7 bytes
+	mov EAX, [EBP+AL_OFF]
+	mov EDI, [EBP+BH_OFF]
+	mul EDI
+	add [ESI+4], EAX
+	adc EDX, 0
+	add [ESI+8], EDX
+
+	mov EAX, [EBP+AH_OFF]
+	mov EDI, [EBP+BL_OFF]
+	mul EDI
+	add [ESI+4], EAX
+	adc EDX, 0
+	add [ESI+8], EDX
+
+	mov EAX, [EBP+AH_OFF]
+	mov EDI, [EBP+BH_OFF]
+	mul EDI
+	add [ESI+8], EAX
+	adc EDX, 0
+	add [ESI+12], EDX
 
 
-
-	; ARM CODE
-	; ldi r16, 31
-	; START_LOOP:
-	; 	lsl l1
-	; 	dec r16
-	; 	cpi r16, 0
-	; 	brne START_LOOP
-
-
-	;; Put your implementation here
-
-	; REMOVE ONE POP TO GIVE RETURN VAL
-	POP EAX
-	POP EDX
-	POP EDI
+	; Put your implementation here
+	MOV ESP, EBP
 	POP EBP				; restore EBP reg
 	RET				;  return
