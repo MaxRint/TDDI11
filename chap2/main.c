@@ -60,10 +60,12 @@ void llmultiply_(unsigned long long int l1, unsigned long long int l2, unsigned 
     unsigned long int ah_bl_h = ah*bl>>32;
 
     unsigned long long int ah_bh = ah*bh;
-    unsigned long int ah_bh_l = ah*bh;
-    unsigned long int ah_bh_h = ah*bh>>32;
+    unsigned long int ah_bh_l = ah_bh;
+    unsigned long int ah_bh_h = ah_bh>>32;
   
-    unsigned long int result_4_7 = (al_bl_h + al_bh_l + ah_bl_l) 
+    unsigned long int result_4_7 = (al_bl_h + al_bh_l + ah_bl_l); 
+    unsigned long int result_8_11 = (al_bh_h + ah_bl_h + ah_bh_l);
+ 
 
   for (int i = 0; i < 4; i++) {
     result[i] = al_bl_l & 0xFF;
@@ -74,12 +76,12 @@ void llmultiply_(unsigned long long int l1, unsigned long long int l2, unsigned 
     result_4_7 = result_4_7>>8;
   }
   for (int i = 8; i < 12; i++) {
-    result[i] = al_bl_l & 0xFF;
-    al_bl_l = al_bl_l>>8;
+    result[i] = result_8_11 & 0xFF;
+    result_8_11 = result_8_11>>8;
   }
   for (int i = 12; i < 16; i++) {
-    result[i] = al_bl_l & 0xFF;
-    al_bl_l = al_bl_l>>8;
+    result[i] = ah_bh_h & 0xFF;
+    ah_bh_h = ah_bh_h >> 8;
   }
 }   
 
