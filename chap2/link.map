@@ -39,7 +39,7 @@ LOAD /courses/TDDI11/sw/lib/elf/libepc.a
 LOAD /courses/TDDI11/sw/lib/elf/djgpp/libc.a
 LOAD /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a
 
-.text           0x0000000000000000     0x1804
+.text           0x0000000000000000     0x1818
                 0x0000000000000000                text_frst = .
  *(.start)
  .start         0x0000000000000000        0x8 /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
@@ -50,55 +50,54 @@ LOAD /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a
                 0x0000000000000008                PutUnsignedLongLong
                 0x0000000000000044                main
  *fill*         0x00000000000001d8        0x8 
- .text          0x00000000000001e0       0x4a llmultiply.o
+ .text          0x00000000000001e0       0x60 llmultiply.o
                 0x00000000000001e0                llmultiply
- *fill*         0x000000000000022a        0x2 
- .text          0x000000000000022c       0x50 /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
-                0x000000000000022c                Init_CPU
- .text          0x000000000000027c      0x5a0 /courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o)
-                0x000000000000068c                IRQ2INT
-                0x00000000000006a0                _GetISR
-                0x00000000000006e4                SetISR
-                0x000000000000071c                Init_IDT
- .text          0x000000000000081c      0x110 /courses/TDDI11/sw/lib/elf/libepc.a(init-crt.o)
-                0x000000000000081c                Init_CRT
-                0x0000000000000850                _LastMemoryAddress
- .text          0x000000000000092c      0x6e0 /courses/TDDI11/sw/lib/elf/libepc.a(display.o)
-                0x000000000000092c                SetCursorVisible
-                0x00000000000009b0                _GetCursorRow
-                0x00000000000009c4                _GetCursorCol
-                0x00000000000009d8                SetCursorPosition
-                0x0000000000000a7c                ClearScreen
-                0x0000000000000ae4                _PutAttb
-                0x0000000000000b30                _PutCharAt
-                0x0000000000000b5c                _PutChar
-                0x0000000000000be0                PutString
-                0x0000000000000c18                PutUnsigned
-                0x0000000000000c50                FormatUnsigned
-                0x0000000000000ce0                Unsigned2Ascii
-                0x0000000000000d64                _Cell
- .text          0x000000000000100c       0xe0 /courses/TDDI11/sw/lib/elf/libepc.a(init8259.o)
-                0x000000000000100c                Init8259
- .text          0x00000000000010ec       0xb0 /courses/TDDI11/sw/lib/elf/libepc.a(init8253.o)
-                0x00000000000010ec                Init8253
- .text          0x000000000000119c       0x98 /courses/TDDI11/sw/lib/elf/libepc.a(checkcpu.o)
-                0x000000000000119c                Check_CPU
- .text          0x0000000000001234       0x60 /courses/TDDI11/sw/lib/elf/libepc.a(io.o)
-                0x0000000000001234                TimerTickISR
-                0x0000000000001240                KeyboardISR
-                0x0000000000001260                ISR_PIC1
-                0x0000000000001267                ISR_PIC2
-                0x0000000000001270                ___main
-                0x0000000000001271                inportb
-                0x000000000000127b                outportb
-                0x000000000000128d                _exit
- .text          0x0000000000001294      0x570 /courses/TDDI11/sw/lib/elf/libepc.a(keyboard.o)
-                0x0000000000001294                ScanCodeRdy
-                0x00000000000012b8                GetScanCode
-                0x00000000000012e8                ScanCode2Ascii
-                0x00000000000014a8                SetsKybdState
-                0x0000000000001698                Enqueue
-                0x0000000000001803                text_last = (. - 0x1)
+ .text          0x0000000000000240       0x50 /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
+                0x0000000000000240                Init_CPU
+ .text          0x0000000000000290      0x5a0 /courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o)
+                0x00000000000006a0                IRQ2INT
+                0x00000000000006b4                _GetISR
+                0x00000000000006f8                SetISR
+                0x0000000000000730                Init_IDT
+ .text          0x0000000000000830      0x110 /courses/TDDI11/sw/lib/elf/libepc.a(init-crt.o)
+                0x0000000000000830                Init_CRT
+                0x0000000000000864                _LastMemoryAddress
+ .text          0x0000000000000940      0x6e0 /courses/TDDI11/sw/lib/elf/libepc.a(display.o)
+                0x0000000000000940                SetCursorVisible
+                0x00000000000009c4                _GetCursorRow
+                0x00000000000009d8                _GetCursorCol
+                0x00000000000009ec                SetCursorPosition
+                0x0000000000000a90                ClearScreen
+                0x0000000000000af8                _PutAttb
+                0x0000000000000b44                _PutCharAt
+                0x0000000000000b70                _PutChar
+                0x0000000000000bf4                PutString
+                0x0000000000000c2c                PutUnsigned
+                0x0000000000000c64                FormatUnsigned
+                0x0000000000000cf4                Unsigned2Ascii
+                0x0000000000000d78                _Cell
+ .text          0x0000000000001020       0xe0 /courses/TDDI11/sw/lib/elf/libepc.a(init8259.o)
+                0x0000000000001020                Init8259
+ .text          0x0000000000001100       0xb0 /courses/TDDI11/sw/lib/elf/libepc.a(init8253.o)
+                0x0000000000001100                Init8253
+ .text          0x00000000000011b0       0x98 /courses/TDDI11/sw/lib/elf/libepc.a(checkcpu.o)
+                0x00000000000011b0                Check_CPU
+ .text          0x0000000000001248       0x60 /courses/TDDI11/sw/lib/elf/libepc.a(io.o)
+                0x0000000000001248                TimerTickISR
+                0x0000000000001254                KeyboardISR
+                0x0000000000001274                ISR_PIC1
+                0x000000000000127b                ISR_PIC2
+                0x0000000000001284                ___main
+                0x0000000000001285                inportb
+                0x000000000000128f                outportb
+                0x00000000000012a1                _exit
+ .text          0x00000000000012a8      0x570 /courses/TDDI11/sw/lib/elf/libepc.a(keyboard.o)
+                0x00000000000012a8                ScanCodeRdy
+                0x00000000000012cc                GetScanCode
+                0x00000000000012fc                ScanCode2Ascii
+                0x00000000000014bc                SetsKybdState
+                0x00000000000016ac                Enqueue
+                0x0000000000001817                text_last = (. - 0x1)
 
 .data           0x0000000000001820      0x77b
                 0x0000000000001820                data_frst = .

@@ -47,40 +47,43 @@ RES_OFF	EQU     24	; Offset from EBP to result array pointer
 llmultiply:
 	PUSH EBP
 	MOV EBP, ESP
+	PUSH EDX
+	PUSH ESI
+
 	mov ESI, [EBP+RES_OFF]
+	mov dword [ESI], 0
+    mov dword [ESI+4], 0
+    mov dword [ESI+8], 0
+    mov dword [ESI+12], 0
 
 	; 0-3 bytes
 	mov EAX, [EBP+AL_OFF]
-	mov EDI, [EBP+BL_OFF]
-	mul EDI
+	mul DWORD [EBP+BL_OFF]
 	mov [ESI], EAX
 	mov [ESI+4], EDX    
 
-
 	;4-7 bytes
 	mov EAX, [EBP+AL_OFF]
-	mov EDI, [EBP+BH_OFF]
-	mul EDI
+	mul DWORD [EBP+BH_OFF]
 	add [ESI+4], EAX
-	adc EDX, 0
-	add [ESI+8], EDX
+	adc [ESI+8], EDX
+	adc DWORD [ESI+12], 0
 
 	mov EAX, [EBP+AH_OFF]
-	mov EDI, [EBP+BL_OFF]
-	mul EDI
+	mul DWORD [EBP+BL_OFF]
 	add [ESI+4], EAX
-	adc EDX, 0
-	add [ESI+8], EDX
+	adc [ESI+8], EDX
+	adc dword [ESI+12], 0
 
 	mov EAX, [EBP+AH_OFF]
-	mov EDI, [EBP+BH_OFF]
-	mul EDI
+	mul DWORD [EBP+BH_OFF]
 	add [ESI+8], EAX
-	adc EDX, 0
-	add [ESI+12], EDX
-
+	adc [ESI+12], EDX
 
 	; Put your implementation here
+
+	POP ESI
+	POP EDX
 	MOV ESP, EBP
 	POP EBP				; restore EBP reg
 	RET				;  return
