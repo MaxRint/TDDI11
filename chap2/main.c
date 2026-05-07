@@ -1,6 +1,7 @@
 #include <libepc.h>
+#include <stdio.h>
 
-void llmultiply(unsigned long long int l1,
+void llmultiply_(unsigned long long int l1,
                 unsigned long long int l2,
                 unsigned char *result);
 
@@ -39,6 +40,50 @@ void PutUnsignedLongLong(unsigned long long int* ulli)
   PutUnsigned(uli[0], 16, 8); 
 }
 
+void llmultiply_(unsigned long long int l1, unsigned long long int l2, unsigned char *result)
+{
+    unsigned long long int ah = l1>>32; 
+    unsigned long long int al = (l1 & 0xFFFFFFFF); 
+    unsigned long long int bh = l2>>32;
+    unsigned long long int bl = (l2 & 0xFFFFFFFF);
+
+    unsigned long long int al_bl = al*bl;
+    unsigned long int al_bl_l = al_bl; 
+    unsigned long int al_bl_h = al_bl>>32;
+
+    unsigned long long int al_bh = al*bh;
+    unsigned long int al_bh_l = al_bh;
+    unsigned long int al_bh_h = al_bh>>32; 
+
+    unsigned long long int ah_bl = ah*bl;
+    unsigned long int ah_bl_l = ah*bl;
+    unsigned long int ah_bl_h = ah*bl>>32;
+
+    unsigned long long int ah_bh = ah*bh;
+    unsigned long int ah_bh_l = ah*bh;
+    unsigned long int ah_bh_h = ah*bh>>32;
+  
+    unsigned long int result_4_7 = (al_bl_h + al_bh_l + ah_bl_l) 
+
+  for (int i = 0; i < 4; i++) {
+    result[i] = al_bl_l & 0xFF;
+    al_bl_l = al_bl_l>>8;
+  }
+  for (int i = 4; i < 8; i++) {
+    result[i] = result_4_7 & 0xFF;
+    result_4_7 = result_4_7>>8;
+  }
+  for (int i = 8; i < 12; i++) {
+    result[i] = al_bl_l & 0xFF;
+    al_bl_l = al_bl_l>>8;
+  }
+  for (int i = 12; i < 16; i++) {
+    result[i] = al_bl_l & 0xFF;
+    al_bl_l = al_bl_l>>8;
+  }
+}   
+
+
 int main(int argc, char *argv[])
 {
 
@@ -61,7 +106,7 @@ int main(int argc, char *argv[])
     PutUnsignedLongLong(&cases[i].rl);
     PutString("\r\n");
     
-    llmultiply(cases[i].a, cases[i].b, result);
+    llmultiply_(cases[i].a, cases[i].b, result);
     
     PutString("Result ");
     PutUnsignedLongLong((unsigned long long int*)&result[8]);

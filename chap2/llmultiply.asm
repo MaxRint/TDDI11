@@ -80,8 +80,6 @@ llmultiply:
 	add [ESI+8], EAX
 	adc [ESI+12], EDX
 
-	; Put your implementation here
-
 	POP ESI
 	POP EDX
 	MOV ESP, EBP
