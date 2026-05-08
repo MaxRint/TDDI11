@@ -1,5 +1,5 @@
 OBJ    = main.o llmultiply.o
-CFLAGS = -O0
+CFLAGS = -O3
 
 COURSE   = /courses/TDDI11/sw
 LDSCRIPT = $(COURSE)/lib/link.cmd

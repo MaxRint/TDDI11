@@ -48,24 +48,32 @@ void llmultiply_(unsigned long long int l1, unsigned long long int l2, unsigned 
     unsigned long long int bl = (l2 & 0xFFFFFFFF);
 
     unsigned long long int al_bl = al*bl;
+    unsigned long long int al_bh = al*bh;
+    unsigned long long int ah_bl = ah*bl;
+    unsigned long long int ah_bh = ah*bh;
+    
+    
     unsigned long int al_bl_l = al_bl; 
     unsigned long int al_bl_h = al_bl>>32;
 
-    unsigned long long int al_bh = al*bh;
     unsigned long int al_bh_l = al_bh;
     unsigned long int al_bh_h = al_bh>>32; 
 
-    unsigned long long int ah_bl = ah*bl;
-    unsigned long int ah_bl_l = ah*bl;
-    unsigned long int ah_bl_h = ah*bl>>32;
+    unsigned long int ah_bl_l = ah_bl;
+    unsigned long int ah_bl_h = ah_bl>>32;
 
-    unsigned long long int ah_bh = ah*bh;
     unsigned long int ah_bh_l = ah_bh;
     unsigned long int ah_bh_h = ah_bh>>32;
   
-    unsigned long int result_4_7 = (al_bl_h + al_bh_l + ah_bl_l); 
-    unsigned long int result_8_11 = (al_bh_h + ah_bl_h + ah_bh_l);
- 
+    unsigned long long int temp_result_4_7 = (unsigned long long int)al_bl_h + al_bh_l + ah_bl_l;
+    unsigned long int result_4_7 = (unsigned long int) (temp_result_4_7 & 0xFFFFFFFF);
+    unsigned long int carry_1 = (unsigned long int) (temp_result_4_7 >> 32);
+
+    unsigned long long int temp_result_8_11 = (unsigned long long int)al_bh_h + ah_bl_h + ah_bh_l + carry_1;
+    unsigned long int result_8_11 = (unsigned long int) (temp_result_8_11 & 0xFFFFFFFF);
+    unsigned long int carry_2 = (unsigned long int) (temp_result_8_11 >> 32);
+    
+    unsigned long int result_12_16 = (unsigned long long int) ah_bh_h + carry_2; 
 
   for (int i = 0; i < 4; i++) {
     result[i] = al_bl_l & 0xFF;
@@ -73,15 +81,15 @@ void llmultiply_(unsigned long long int l1, unsigned long long int l2, unsigned 
   }
   for (int i = 4; i < 8; i++) {
     result[i] = result_4_7 & 0xFF;
-    result_4_7 = result_4_7>>8;
+    result_4_7 = result_4_7 >> 8;
   }
   for (int i = 8; i < 12; i++) {
     result[i] = result_8_11 & 0xFF;
-    result_8_11 = result_8_11>>8;
+    result_8_11 = result_8_11 >> 8;
   }
   for (int i = 12; i < 16; i++) {
-    result[i] = ah_bh_h & 0xFF;
-    ah_bh_h = ah_bh_h >> 8;
+    result[i] = result_12_16 & 0xFF;
+    result_12_16 = result_12_16 >> 8;
   }
 }   
 
@@ -108,7 +116,7 @@ int main(int argc, char *argv[])
     PutUnsignedLongLong(&cases[i].rl);
     PutString("\r\n");
     
-    llmultiply_(cases[i].a, cases[i].b, result);
+    llmultiply(cases[i].a, cases[i].b, result);
     
     PutString("Result ");
     PutUnsignedLongLong((unsigned long long int*)&result[8]);
@@ -117,6 +125,10 @@ int main(int argc, char *argv[])
     
     PutString("\r\n");
   }
+
+    PutUnsigned(CPU_Clock_Cycles(), 10, 5);
+  
+  
 
   return 0;
 }
