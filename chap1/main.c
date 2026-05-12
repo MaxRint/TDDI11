@@ -236,11 +236,13 @@ int main(int argc, char **argv)
 			if(temperatureMeasured > temperatureDesired + 0.3)
 			{
 				isCoolerOn = true;
+				isHeaterOn = false;
 			}
 
 			if (temperatureMeasured < temperatureDesired - 0.3)
 			{
 				isHeaterOn = true;
+				isCoolerOn = false;
 			}
 
 		}
@@ -309,14 +311,14 @@ int main(int argc, char **argv)
 		// Assignment
 		if(isCoolerOn)
 		{
-            outputRegister |= (0x00010000 << 4);
+            outputRegister |= (0x00000001 << 4);
 		}
 
 		// Heater control at bit 5 : YYYY YYYY YYYY YYYY YYYY YYYY YYOY YYYY , assuming that "O" is the output bit (Heater control) and "Y" is a don't-touch bit.
 		// Assignment
 		if(isHeaterOn)
 		{
-            outputRegister |= (0x00100000 << 5);
+            outputRegister |= (0x00000001 << 5);
 		}
 		// Humidity too high warning at bit 6 : YYYY YYYY YYYY YYYY YYYY YYYY YOYY YYYY , assuming that "O" is the output bit and "Y" is a don't-touch bit.
 		// Pay attention that writing 1 actually turns off the light, as defined in the lab manual.
