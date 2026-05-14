@@ -228,7 +228,9 @@ int main(void)
 
 			  case BLUE_UPDATE:
 				  PreviousState = BLUE_UPDATE;
-				  if (Win){
+				  if(Button){
+					  State = EXIT;
+				  }else if (Win){
 					  State = BLUE_WINNER;
 				  }else if (Full){
 					  State = NO_WIN;
@@ -261,7 +263,9 @@ int main(void)
 
 			  case RED_UPDATE:
 				  PreviousState = RED_UPDATE;
-				  if (Win){
+				  if(Button){
+					  State = EXIT;
+				  }else if (Win){
 					  State = RED_WINNER;
 				  }else if (Full){
 					  State = NO_WIN;
@@ -274,21 +278,27 @@ int main(void)
 
 			  case BLUE_WINNER:
 				  PreviousState = BLUE_WINNER;
-				  if (Touch){
+				  if(Button){
+					  State = EXIT;
+				  }else if (Touch){
 					  State = WELCOME;
 				  }
 				  break;
 
 			  case RED_WINNER:
 				  PreviousState = RED_WINNER;
-				  if (Touch){
+				  if(Button){
+					  State = EXIT;
+				  }else if (Touch){
 					  State = WELCOME;
 				  }
 				  break;
 
 			  case NO_WIN:
 				  PreviousState = NO_WIN;
-				  if (Touch){
+				  if(Button){
+					  State = EXIT;
+				  }else if (Touch){
 					  State = WELCOME;
 				  }
 				  break;
