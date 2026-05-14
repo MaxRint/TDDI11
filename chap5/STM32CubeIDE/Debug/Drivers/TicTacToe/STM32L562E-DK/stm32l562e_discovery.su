@@ -1,0 +1,15 @@
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:119:9:TicTacToe_GetVersion	4	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:128:16:TicTacToe_GetBoardName	4	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:137:16:TicTacToe_GetBoardID	4	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:154:9:TicTacToe_LED_Init	56	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:193:9:TicTacToe_LED_DeInit	40	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:216:9:TicTacToe_LED_On	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:233:9:TicTacToe_LED_Off	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:250:9:TicTacToe_LED_Toggle	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:267:9:TicTacToe_LED_GetState	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:297:9:TicTacToe_PB_Init	56	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:355:9:TicTacToe_PB_DeInit	40	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:373:9:TicTacToe_PB_GetState	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:387:13:TicTacToe_PB_Callback	16	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:404:6:TicTacToe_PB_IRQHandler	16	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c:681:13:BUTTON_USER_EXTI_Callback	8	static

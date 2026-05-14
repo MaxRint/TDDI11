@@ -5,23 +5,23 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_cortex.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dfsdm.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dfsdm_ex.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma_ex.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_exti.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_gpio.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_i2c.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_i2c_ex.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_icache.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_pwr.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_pwr_ex.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_rcc.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_rcc_ex.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_sram.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_ll_fmc.c 
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_cortex.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dfsdm.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dfsdm_ex.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma_ex.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_exti.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_gpio.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_i2c.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_i2c_ex.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_icache.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_pwr.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_pwr_ex.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_rcc.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_rcc_ex.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_sram.c \
+/home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_ll_fmc.c 
 
 OBJS += \
 ./Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal.o \
@@ -63,39 +63,39 @@ C_DEPS += \
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_cortex.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_cortex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_cortex.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_cortex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_dfsdm.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dfsdm.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_dfsdm.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dfsdm.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_dfsdm_ex.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dfsdm_ex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_dfsdm_ex.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dfsdm_ex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_dma.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_dma.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_dma_ex.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma_ex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_dma_ex.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma_ex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_exti.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_exti.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_exti.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_exti.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_gpio.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_gpio.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_gpio.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_gpio.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_i2c.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_i2c.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_i2c.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_i2c.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_i2c_ex.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_i2c_ex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_i2c_ex.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_i2c_ex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_icache.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_icache.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_icache.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_icache.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_pwr.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_pwr.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_pwr.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_pwr.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_pwr_ex.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_pwr_ex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_pwr_ex.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_pwr_ex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_rcc.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_rcc.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_rcc.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_rcc.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_rcc_ex.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_rcc_ex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_rcc_ex.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_rcc_ex.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_sram.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_sram.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_sram.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_sram.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/STM32L5xx_HAL_Driver/stm32l5xx_ll_fmc.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_ll_fmc.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
+Drivers/STM32L5xx_HAL_Driver/stm32l5xx_ll_fmc.o: /home/maxri670/TDDI11/chap5/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_ll_fmc.c Drivers/STM32L5xx_HAL_Driver/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
 clean: clean-Drivers-2f-STM32L5xx_HAL_Driver

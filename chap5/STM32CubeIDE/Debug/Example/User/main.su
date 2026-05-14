@@ -1,0 +1,14 @@
+/home/maxri670/TDDI11/chap5/Src/main.c:84:5:main	32	static
+/home/maxri670/TDDI11/chap5/Src/main.c:310:13:Clear_Display_Welcome	8	static
+/home/maxri670/TDDI11/chap5/Src/main.c:322:13:Clear_Display_Board	32	static
+/home/maxri670/TDDI11/chap5/Src/main.c:344:13:Display_Text	16	static
+/home/maxri670/TDDI11/chap5/Src/main.c:352:13:Display_Other_Text	16	static
+/home/maxri670/TDDI11/chap5/Src/main.c:361:6:Initialize_Board	24	static
+/home/maxri670/TDDI11/chap5/Src/main.c:368:16:Check_Move_Validity	32	static
+/home/maxri670/TDDI11/chap5/Src/main.c:397:16:Check_Win	24	static
+/home/maxri670/TDDI11/chap5/Src/main.c:429:16:Check_Full	24	static
+/home/maxri670/TDDI11/chap5/Src/main.c:459:6:SystemClock_Config	104	static
+/home/maxri670/TDDI11/chap5/Src/main.c:512:13:SystemHardwareInit	72	static
+/home/maxri670/TDDI11/chap5/Src/main.c:606:6:Error_Handler	8	static
+/home/maxri670/TDDI11/chap5/Src/main.c:621:6:TicTacToe_PB_Callback	16	static
+/home/maxri670/TDDI11/chap5/Src/main.c:634:6:TicTacToe_TS_Callback	16	static

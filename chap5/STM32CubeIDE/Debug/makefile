@@ -64,8 +64,8 @@ all: main-build
 main-build: TicTacToe.elf secondary-outputs
 
 # Tool invocations
-TicTacToe.elf TicTacToe.map: $(OBJS) $(USER_OBJS) /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/STM32CubeIDE/STM32L562QEIXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "TicTacToe.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/STM32CubeIDE/STM32L562QEIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="TicTacToe.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+TicTacToe.elf TicTacToe.map: $(OBJS) $(USER_OBJS) /home/maxri670/TDDI11/chap5/STM32CubeIDE/STM32L562QEIXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "TicTacToe.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"/home/maxri670/TDDI11/chap5/STM32CubeIDE/STM32L562QEIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="TicTacToe.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

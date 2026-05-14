@@ -5,11 +5,11 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_bus.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_lcd.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c \
-/home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c 
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c \
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_bus.c \
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_lcd.c \
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c \
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c 
 
 OBJS += \
 ./Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.o \
@@ -27,15 +27,15 @@ C_DEPS += \
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c Drivers/TicTacToe/STM32L562E-DK/subdir.mk
+Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.o: /home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery.c Drivers/TicTacToe/STM32L562E-DK/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_bus.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_bus.c Drivers/TicTacToe/STM32L562E-DK/subdir.mk
+Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_bus.o: /home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_bus.c Drivers/TicTacToe/STM32L562E-DK/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_lcd.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_lcd.c Drivers/TicTacToe/STM32L562E-DK/subdir.mk
+Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_lcd.o: /home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_lcd.c Drivers/TicTacToe/STM32L562E-DK/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c Drivers/TicTacToe/STM32L562E-DK/subdir.mk
+Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.o: /home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c Drivers/TicTacToe/STM32L562E-DK/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.o: /home/rahmed/STM32CubeIDE/workspace_1.14.0/TicTacToe/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c Drivers/TicTacToe/STM32L562E-DK/subdir.mk
+Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.o: /home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c Drivers/TicTacToe/STM32L562E-DK/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m33 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L562xx -DDEBUG -c -I../../Utilities/lcd -I../../Drivers/TicTacToe/STM32L562E-DK -I../../Drivers/CMSIS/Device/ST/STM32L5xx/Include -I../../Drivers/TicTacToe/Components/Common -I../../Drivers/CMSIS/Include -I../../Inc -I../../Drivers/STM32L5xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
 clean: clean-Drivers-2f-TicTacToe-2f-STM32L562E-2d-DK

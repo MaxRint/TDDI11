@@ -1,0 +1,14 @@
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:115:9:TicTacToe_MOTION_SENSOR_Init	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:148:9:TicTacToe_MOTION_SENSOR_DeInit	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:181:9:TicTacToe_MOTION_SENSOR_GetCapabilities	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:210:9:TicTacToe_MOTION_SENSOR_ReadID	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:244:9:TicTacToe_MOTION_SENSOR_Enable	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:284:9:TicTacToe_MOTION_SENSOR_Disable	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:325:9:TicTacToe_MOTION_SENSOR_GetAxes	32	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:366:9:TicTacToe_MOTION_SENSOR_GetAxesRaw	32	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:407:9:TicTacToe_MOTION_SENSOR_GetSensitivity	32	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:448:9:TicTacToe_MOTION_SENSOR_GetOutputDataRate	32	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:489:9:TicTacToe_MOTION_SENSOR_SetOutputDataRate	32	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:530:9:TicTacToe_MOTION_SENSOR_GetFullScale	32	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:571:9:TicTacToe_MOTION_SENSOR_SetFullScale	32	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:616:16:LSM6DSO_Probe	56	static

@@ -1,0 +1,14 @@
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:115:9:TicTacToe_MOTION_SENSOR_Init	5
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:148:9:TicTacToe_MOTION_SENSOR_DeInit	4
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:181:9:TicTacToe_MOTION_SENSOR_GetCapabilities	5
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:210:9:TicTacToe_MOTION_SENSOR_ReadID	5
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:244:9:TicTacToe_MOTION_SENSOR_Enable	6
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:284:9:TicTacToe_MOTION_SENSOR_Disable	6
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:325:9:TicTacToe_MOTION_SENSOR_GetAxes	7
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:366:9:TicTacToe_MOTION_SENSOR_GetAxesRaw	7
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:407:9:TicTacToe_MOTION_SENSOR_GetSensitivity	7
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:448:9:TicTacToe_MOTION_SENSOR_GetOutputDataRate	7
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:489:9:TicTacToe_MOTION_SENSOR_SetOutputDataRate	6
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:530:9:TicTacToe_MOTION_SENSOR_GetFullScale	7
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:571:9:TicTacToe_MOTION_SENSOR_SetFullScale	6
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_motion_sensors.c:616:16:LSM6DSO_Probe	7

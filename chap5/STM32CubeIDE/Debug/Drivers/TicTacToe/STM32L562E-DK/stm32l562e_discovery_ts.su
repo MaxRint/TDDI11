@@ -1,0 +1,15 @@
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:126:9:TicTacToe_TS_Init	64	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:205:9:TicTacToe_TS_DeInit	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:237:9:TicTacToe_TS_EnableIT	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:265:9:TicTacToe_TS_DisableIT	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:291:9:TicTacToe_TS_Set_Orientation	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:333:9:TicTacToe_TS_Get_Orientation	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:356:9:TicTacToe_TS_GetState	48	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:455:9:TicTacToe_TS_Get_MultiTouchState	72	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:550:9:TicTacToe_TS_GestureConfig	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:573:9:TicTacToe_TS_GetGestureId	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:596:9:TicTacToe_TS_GetCapabilities	24	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:632:13:TicTacToe_TS_Callback	16	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:646:6:TicTacToe_TS_IRQHandler	16	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:662:16:FT6X06_Probe	48	static
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/STM32L562E-DK/stm32l562e_discovery_ts.c:710:13:TS_EXTI_Callback	8	static

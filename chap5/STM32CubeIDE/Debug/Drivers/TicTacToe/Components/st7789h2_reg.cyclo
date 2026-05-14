@@ -1,0 +1,3 @@
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/Components/st7789h2/st7789h2_reg.c:45:9:st7789h2_read_reg	1
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/Components/st7789h2/st7789h2_reg.c:57:9:st7789h2_write_reg	1
+/home/maxri670/TDDI11/chap5/Drivers/TicTacToe/Components/st7789h2/st7789h2_reg.c:68:9:st7789h2_send_data	1

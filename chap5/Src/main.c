@@ -34,7 +34,7 @@ typedef enum {FREE, RED, BLUE} Cell_State;
 
 /* Private variables ---------------------------------------------------------*/
 
-char liuids[30] = "liuid001 and liuid002";
+char liuids[30] = "maxri670 and maxve266";
 
 
 uint16_t   x, y;
@@ -133,14 +133,57 @@ int main(void)
 					  Display_Text((uint8_t *)"Touch screen to start new game");
 					  Display_Other_Text((uint8_t *)"Always exit with push-button");
 					  break;
+
 				  case BLUE_QUESTION:
 					  Touch = 0;
 					  Clear_Display_Board(BoardState);
 					  Display_Text((uint8_t*)"Blue's move");
 					  break;
+
 				  case BLUE_ANSWER:
 					  Valid = Check_Move_Validity(x, y, BoardState, &ix, &iy);
 					  break;
+
+				  case BLUE_UPDATE:
+					  Touch = 0;
+					  BoardState[((int)ix)+((int)iy*3)] = BLUE;
+					  Win = Check_Win(BoardState);
+					  Full = Check_Full(BoardState);
+					  break;
+
+				  case RED_QUESTION:
+					  Touch = 0;
+					  Clear_Display_Board(BoardState);
+					  Display_Text((uint8_t*)"Red's move");
+					  break;
+
+				  case RED_ANSWER:
+					  Valid = Check_Move_Validity(x, y, BoardState, &ix, &iy);
+					  break;
+
+				  case RED_UPDATE:
+					  Touch = 0;
+					  BoardState[((int)ix)+((int)iy*3)] = RED;
+					  Win = Check_Win(BoardState);
+					  Full = Check_Full(BoardState);
+					  break;
+
+				  case RED_WINNER:
+					  Clear_Display_Board(BoardState);
+					  Display_Text((uint8_t *)"RED WIN!");
+					  break;
+
+				  case BLUE_WINNER:
+					  Clear_Display_Board(BoardState);
+					  Display_Text((uint8_t *)"BLUE WIN!");
+					  break;
+
+				  case NO_WIN:
+					  Clear_Display_Board(BoardState);
+					  Display_Text((uint8_t *)"ITS A DRAW!");
+					  break;
+
+
 				  case EXIT:
 				  default:
 					  Clear_Display_Welcome();
@@ -161,6 +204,7 @@ int main(void)
 					  State = BLUE_QUESTION;
 				  }
 				  break;
+
 			  case BLUE_QUESTION:
 				  PreviousState = BLUE_QUESTION;
 				  if(Button){
@@ -169,14 +213,86 @@ int main(void)
 					  State = BLUE_ANSWER;
 				  }
 				  break;
+
 			  case BLUE_ANSWER:
 				  PreviousState = BLUE_ANSWER;
 				  if(Button){
 					  State = EXIT;
 				  }else if(Valid){
+					  State = BLUE_UPDATE;
+				  }else if(!Valid)
+				  {
+					  State = BLUE_QUESTION;
+				  }
+				  break;
+
+			  case BLUE_UPDATE:
+				  PreviousState = BLUE_UPDATE;
+				  if (Win){
+					  State = BLUE_WINNER;
+				  }else if (Full){
+					  State = NO_WIN;
+				  }
+				  else {
+					  State = RED_QUESTION;
+				  }
+				  break;
+
+			  case RED_QUESTION:
+				  PreviousState = RED_QUESTION;
+				  if(Button){
+					  State = EXIT;
+				  }else if(Touch){
+					  State = RED_ANSWER;
+				  }
+				  break;
+
+			  case RED_ANSWER:
+				  PreviousState = RED_ANSWER;
+				  if(Button){
+					  State = EXIT;
+				  }else if(Valid){
+					  State = RED_UPDATE;
+				  }else if(!Valid)
+				  {
+					  State = RED_QUESTION;
+				  }
+				 break;
+
+			  case RED_UPDATE:
+				  PreviousState = RED_UPDATE;
+				  if (Win){
+					  State = RED_WINNER;
+				  }else if (Full){
+					  State = NO_WIN;
+				  }
+				  else {
+					  State = BLUE_QUESTION;
+				  }
+
+				  break;
+
+			  case BLUE_WINNER:
+				  PreviousState = BLUE_WINNER;
+				  if (Touch){
 					  State = WELCOME;
 				  }
 				  break;
+
+			  case RED_WINNER:
+				  PreviousState = RED_WINNER;
+				  if (Touch){
+					  State = WELCOME;
+				  }
+				  break;
+
+			  case NO_WIN:
+				  PreviousState = NO_WIN;
+				  if (Touch){
+					  State = WELCOME;
+				  }
+				  break;
+
 			  default:
 				  PreviousState = EXIT;
 				  State = WELCOME;
