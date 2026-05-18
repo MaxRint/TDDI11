@@ -79,15 +79,16 @@ LOAD /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a
                 0x0000000000000008                main
                 0x0000000000000062                InitSerial
  *fill*         0x0000000000000125        0xb 
- .text          0x0000000000000130       0x4e serial.o
+ .text          0x0000000000000130       0x4c serial.o
                 0x0000000000000130                SerialPut
                 0x000000000000014a                SerialISR
- .text          0x000000000000017e       0x60 inbound.o
-                0x000000000000017e                InitInBound
-                0x00000000000001a4                InBound
- .text          0x00000000000001de       0xea outbound.o
-                0x00000000000001de                InitOutBound
-                0x0000000000000204                OutBound
+ .text          0x000000000000017c       0x60 inbound.o
+                0x000000000000017c                InitInBound
+                0x00000000000001a2                InBound
+ .text          0x00000000000001dc       0xea outbound.o
+                0x00000000000001dc                InitOutBound
+                0x0000000000000202                OutBound
+ *fill*         0x00000000000002c6        0x2 
  .text          0x00000000000002c8       0x50 /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
                 0x00000000000002c8                Init_CPU
  .text          0x0000000000000318      0x5a0 /courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o)

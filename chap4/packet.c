@@ -7,7 +7,8 @@
 #include "elapsed.h"
 #include "serial.h"
 
-static OS_EVENT *SendP_sem = 0;
+static OS_EVENT *SendP_sem;
+
 void ReceivePackets(void)
 {
   SerialInit() ;
@@ -56,10 +57,11 @@ void ReceivePackets(void)
 
 void SendPacket(int type, BYTE8 *bfr, int bytes)
 {
-  INT8U *err = NULL; 
+  INT8U err; 
+  SendP_sem = OSSemCreate(1);
 
 
-  OSSemPend(SendP_sem, 0, err);
+  OSSemPend(SendP_sem, 0, &err);
 
 
 

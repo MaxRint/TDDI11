@@ -9,7 +9,7 @@ Archive member included to satisfy reference by file (symbol)
 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_q.o)
                               serial.o (OSQCreate)
 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_sem.o)
-                              packet.o (OSSemPend)
+                              packet.o (OSSemCreate)
 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_task.o)
                               main.o (OSTaskCreate)
 /courses/TDDI11/sw/lib/elf/ucos_ii.a(os_time.o)
@@ -143,10 +143,10 @@ LOAD /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a
                 0x00000000000004d2                PostTime
                 0x00000000000004f4                InboundTime
                 0x0000000000000570                ElapsedLocal
- .text          0x0000000000000798      0x14b packet.o
+ .text          0x0000000000000798      0x157 packet.o
                 0x0000000000000798                ReceivePackets
                 0x000000000000084a                SendPacket
- *fill*         0x00000000000008e3        0xd 
+ *fill*         0x00000000000008ef        0x1 
  .text          0x00000000000008f0       0x6d isr.o
                 0x00000000000008f0                OSKeyboardISR
                 0x0000000000000925                OSSerialISR
@@ -438,13 +438,13 @@ LOAD /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a
                 0x0000000000010e94                heap_frst = (stack_last + 0x1)
 OUTPUT(embedded.bin binary)
 
-.debug_info     0x0000000000000000     0x2af1
+.debug_info     0x0000000000000000     0x2aeb
  .debug_info    0x0000000000000000      0x657 main.o
  .debug_info    0x0000000000000657      0x6b8 serial.o
  .debug_info    0x0000000000000d0f      0x72b inbound.o
  .debug_info    0x000000000000143a      0x7a7 outbound.o
  .debug_info    0x0000000000001be1      0x848 elapsed.o
- .debug_info    0x0000000000002429      0x6c8 packet.o
+ .debug_info    0x0000000000002429      0x6c2 packet.o
 
 .debug_abbrev   0x0000000000000000      0x875
  .debug_abbrev  0x0000000000000000      0x12a main.o
@@ -468,13 +468,13 @@ OUTPUT(embedded.bin binary)
  .debug_aranges
                 0x00000000000000a0       0x20 packet.o
 
-.debug_line     0x0000000000000000      0x564
+.debug_line     0x0000000000000000      0x565
  .debug_line    0x0000000000000000       0xc4 main.o
  .debug_line    0x00000000000000c4       0xe2 serial.o
  .debug_line    0x00000000000001a6       0xaa inbound.o
  .debug_line    0x0000000000000250      0x127 outbound.o
  .debug_line    0x0000000000000377      0x118 elapsed.o
- .debug_line    0x000000000000048f       0xd5 packet.o
+ .debug_line    0x000000000000048f       0xd6 packet.o
 
 .debug_str      0x0000000000000000     0x1e53
  .debug_str     0x0000000000000000      0x4da main.o
