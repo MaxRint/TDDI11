@@ -153,11 +153,11 @@ LOAD /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a
                 0x000000000000a95c                heap_frst = (stack_last + 0x1)
 OUTPUT(embedded.bin binary)
 
-.debug_info     0x0000000000000000      0x668
- .debug_info    0x0000000000000000      0x668 main.o
+.debug_info     0x0000000000000000      0x63e
+ .debug_info    0x0000000000000000      0x63e main.o
 
-.debug_abbrev   0x0000000000000000      0x205
- .debug_abbrev  0x0000000000000000      0x205 main.o
+.debug_abbrev   0x0000000000000000      0x1ed
+ .debug_abbrev  0x0000000000000000      0x1ed main.o
 
 .debug_loc      0x0000000000000000      0x401
  .debug_loc     0x0000000000000000      0x401 main.o
@@ -172,8 +172,8 @@ OUTPUT(embedded.bin binary)
 .debug_line     0x0000000000000000      0x15c
  .debug_line    0x0000000000000000      0x15c main.o
 
-.debug_str      0x0000000000000000      0x27c
- .debug_str     0x0000000000000000      0x27c main.o
+.debug_str      0x0000000000000000      0x271
+ .debug_str     0x0000000000000000      0x271 main.o
 
 .comment        0x0000000000000000       0x12
  .comment       0x0000000000000000       0x12 main.o

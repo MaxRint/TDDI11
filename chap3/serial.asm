@@ -60,8 +60,6 @@ SerialISR:	STI             	; Enable (higher-priority) IRQs
 	PUSH	EBP
 	MOV 	EBP, ESP
 	PUSHAD
-
-LOOP2:
 		; <your code here>	; (2) Get character from UART
 	MOV 	DX, LSR_PORT
 	IN 		AL, DX
@@ -78,7 +76,7 @@ LOOP2:
 
 		; <your code here>	; Param #1: address of queue
 	PUSH 	data
-	PUSH  	DWORD [inbound_queue]
+	PUSH  	[inbound_queue]
 	CALL	QueueInsert
 	ADD		ESP,8
 

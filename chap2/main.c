@@ -116,7 +116,7 @@ int main(int argc, char *argv[])
     PutUnsignedLongLong(&cases[i].rl);
     PutString("\r\n");
     
-    llmultiply(cases[i].a, cases[i].b, result);
+    llmultiply_(cases[i].a, cases[i].b, result);
     
     PutString("Result ");
     PutUnsignedLongLong((unsigned long long int*)&result[8]);
